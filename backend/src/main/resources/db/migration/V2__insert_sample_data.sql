@@ -1,0 +1,30 @@
+INSERT INTO users (email, password, name, role)
+VALUES ('admin@gmail.com', 'admin', 'Administrator', 'ROLE_ADMIN'),
+       ('krishna@gmail.com', 'secret', 'Krishna', 'ROLE_USER');
+
+INSERT INTO short_urls (short_key, original_url, created_by, created_at, expires_at, is_private, click_count)
+VALUES ('google', 'https://www.google.com', 1, TIMESTAMP '2024-08-01 10:00:00', NULL, FALSE, 150),
+       ('github', 'https://www.github.com', 1, TIMESTAMP '2024-08-02 11:30:00', NULL, FALSE, 85),
+       ('stkovr', 'https://www.stackoverflow.com', 1, TIMESTAMP '2024-08-03 09:15:00', NULL, FALSE, 200),
+       ('reddit', 'https://www.reddit.com', 1, TIMESTAMP '2024-08-04 14:20:00', NULL, FALSE, 45),
+       ('ytube', 'https://www.youtube.com', 1, TIMESTAMP '2024-08-05 18:45:00', NULL, FALSE, 320),
+       ('wikip', 'https://www.wikipedia.org', 1, TIMESTAMP '2024-08-06 12:00:00', NULL, FALSE, 110),
+       ('amazon', 'https://www.amazon.com', 1, TIMESTAMP '2024-08-07 16:10:00', NULL, FALSE, 65),
+       ('twtrX', 'https://www.x.com', 1, TIMESTAMP '2024-08-08 20:30:00', NULL, TRUE, 12),
+       ('linkdn', 'https://www.linkedin.com', 1, TIMESTAMP '2024-08-09 08:50:00', NULL, FALSE, 95),
+       ('ntflix', 'https://www.netflix.com', 1, TIMESTAMP '2024-08-10 21:00:00', NULL, FALSE, 180),
+       ('apple', 'https://www.apple.com', 1, TIMESTAMP '2024-08-11 10:45:00', NULL, FALSE, 55),
+       ('msft', 'https://www.microsoft.com', 1, TIMESTAMP '2024-08-12 11:15:00', NULL, FALSE, 40),
+       ('fbcom', 'https://www.facebook.com', 1, TIMESTAMP '2024-08-13 13:25:00', NULL, FALSE, 210),
+       ('insta', 'https://www.instagram.com', 1, TIMESTAMP '2024-08-14 15:40:00', NULL, TRUE, 30),
+       ('medium', 'https://www.medium.com', 1, TIMESTAMP '2024-08-15 17:00:00', NULL, FALSE, 75),
+       ('devto', 'https://www.dev.to', 1, TIMESTAMP '2024-08-16 09:05:00', NULL, FALSE, 120),
+       ('docker', 'https://www.docker.com', 1, TIMESTAMP '2024-08-17 14:55:00', NULL, FALSE, 60),
+       ('k8sio', 'https://www.kubernetes.io', 1, TIMESTAMP '2024-08-18 16:35:00', NULL, FALSE, 45),
+       ('sprng', 'https://www.spring.io', 1, TIMESTAMP '2024-08-19 11:20:00', NULL, FALSE, 130),
+       ('psql', 'https://www.postgresql.org', 1, TIMESTAMP '2024-08-20 10:10:00', NULL, FALSE, 88),
+       ('java', 'https://www.java.com', 1, TIMESTAMP '2024-08-21 12:40:00', NULL, FALSE, 70),
+       ('python', 'https://www.python.org', 1, TIMESTAMP '2024-08-22 13:50:00', NULL, FALSE, 115),
+       ('rustlg', 'https://www.rust-lang.org', 1, TIMESTAMP '2024-08-23 15:00:00', NULL, FALSE, 92),
+       ('tslang', 'https://www.typescriptlang.org', 1, TIMESTAMP '2024-08-24 16:20:00', NULL, FALSE, 105),
+       ('openai', 'https://www.openai.com', 1, TIMESTAMP '2024-08-25 09:30:00', NULL, FALSE, 450);

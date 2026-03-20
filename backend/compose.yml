@@ -1,0 +1,48 @@
+services:
+
+  # -----------------------------------------------
+  # PostgreSQL — Local Development Database
+  # -----------------------------------------------
+  postgres:
+    image: 'postgres:17-alpine'
+    container_name: chotaurl-postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # -----------------------------------------------
+  # Spring Boot App (for running the full stack locally)
+  # Run: docker compose --profile app up
+  # -----------------------------------------------
+  app:
+    profiles:
+      - app
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chotaurl-app
+    ports:
+      - '8080:8080'
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/postgres
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      APP_BASE_URL: http://localhost:8080
+      SPRING_PROFILES_ACTIVE: default
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
