@@ -167,3 +167,4 @@ Migrations live in `backend/src/main/resources/db/migration` and run automatical
 
 ## Notes for Frontend Consumers
 
+Authentication is HTTP Basic. Encode credentials as `Base64(username:password)` and pass them in the `Authorization` header on every protected request. CSRF tokens are not required. Data endpoints return JSON; a small number of success and error paths return plain text — the API contract document details which ones.
